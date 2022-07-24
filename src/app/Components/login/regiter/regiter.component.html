@@ -1,0 +1,109 @@
+<!-- <div style="background-image: url(../../../assets/workspace.jfif); height: 100%;" [ngStyle.xs]="{'width.px': 550, color: 'blue'}"> -->
+<div style="background-color: rgb(212, 250, 231);height: 160%;" [ngStyle.xs]="{'width.px': 550, color: 'blue'}">
+    <div fxLayout="center" fxLayoutAlign="center center">
+        <div style="display: flex;flex-flow:column">
+            <mat-card class="example-card">
+                <mat-card-title class="h1">Employee Payroll</mat-card-title>
+                <div style="text-align: center;font-size: 18px;">Registration Form</div>
+            </mat-card>
+            <mat-card class="example-card2">
+                <div fxLayout="column" fxLayoutAlign="space-evenly start" style="margin-top:-40px;">
+                    <form [formGroup]="signupForm" fxLayout="column">
+                        <div>
+                            <span>User Name</span>
+                            <div>
+                                <mat-form-field width="300px" appearance="outline">
+                                    <input matInput formControlName="fullName">
+                                    <mat-error>Name Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>EmailId</span>
+                            <div>
+                                <mat-form-field width="100" appearance="outline">
+                                    <input matInput formControlName="email">
+                                    <mat-error>Email Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Password</span>
+                            <div>
+                                <mat-form-field appearance="outline">
+                                    <input matInput [type]="hide?'password':'text'" matInput formControlName="password"
+                                        autocomplete="on">
+                                    <mat-error>Password Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Mobile Number</span>
+                            <div>
+                                <mat-form-field appearance="outline">
+                                    <input matInput formControlName="mobileNumber">
+                                    <mat-error>Mobile Number Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Profile image</span>
+                            <div>
+                                <mat-radio-button value="1"><img src="../../../assets/P1.png"></mat-radio-button>
+                                <mat-radio-button value="2"><img src="../../../assets/P2.png"></mat-radio-button>
+                                <mat-radio-button value="3"><img src="../../../assets/P3.png"></mat-radio-button>
+                                <mat-radio-button value="4"><img src="../../../assets/P4.png"></mat-radio-button>
+                            </div>
+                            <div>
+                                <span>Gender</span>
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-select disableRipple>
+                                            <mat-option value="1">Male</mat-option>
+                                            <mat-option value="2">Female</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Department</span>
+                            <div>
+                                <mat-form-field appearance="fill">
+                                    <mat-select disableRipple>
+                                        <mat-option value="1">Computer</mat-option>
+                                        <mat-option value="2">HR</mat-option>
+                                        <mat-option value="3">Sales</mat-option>
+                                        <mat-option value="4">Others</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Start Date</span>
+                            <div>
+                                <mat-form-field style="width: 280px;" appearance="fill">
+                                    <mat-label>Choose a date</mat-label>
+                                    <input matInput [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker">
+                                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Note</span>
+                            <div>
+                                <mat-form-field appearance="outline">
+                                    <input style="height: 50px;" matInput formControlName="note">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </form>
+                    <button (click)="onSignup()" class="loginbutton" style="color: white;">Signup</button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

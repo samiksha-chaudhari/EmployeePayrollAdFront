@@ -1,0 +1,47 @@
+<div style="background-color: rgb(212, 250, 231);height: 150%;" [ngStyle.xs]="{'width.px': 550, color: 'blue'}">
+    <div fxLayout="center" fxLayoutAlign="center center">
+        <div style="display: flex;flex-flow:column">
+            <mat-card class="example-card">
+                <mat-card-title class="h1">Employee Payroll</mat-card-title>
+                <div style="text-align: center;font-size: 20px;">LOGIN</div>
+            </mat-card>
+            <mat-card class="example-card2">                
+                <div fxLayout="column" fxLayoutAlign="space-evenly start" style="margin-top:-40px;">
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" fxLayout="column" fxLayoutAlign="start start">
+                        <div>
+                            <span>Email id</span>
+                            <div>
+                                <mat-form-field width="600px" appearance="outline">
+                                    <input matInput formControlName="email">
+                                    <mat-error>Email Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Password</span>
+                            <div>
+                                <mat-form-field appearance="outline">
+                                    <input matInput [type]="hide?'password':'text'" matInput formControlName="password"
+                                        autocomplete="on">
+                                    <mat-error>Password Required!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <span class="forgetpass">forgetpassword?</span>
+                        <button class="loginbutton" style="color: white;">Login</button>
+                    </form>
+                    <div></div>
+
+                    <div style="margin-top: 30px; margin-bottom: 30px;">
+                        <h2><span>OR</span></h2>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px" fxLayout.xs="column">
+                        <button class="bottombuttons" style="color: white;">Facebook</button>
+                        <button style=" background-color: #E4E4E4;" class="bottombuttons">Google</button>
+                    </div>
+                </div>                
+                <img src="../../../assets/work.jpg" class="image">               
+            </mat-card>
+        </div>
+    </div>
+</div>

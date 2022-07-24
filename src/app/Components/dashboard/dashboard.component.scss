@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+mat-toolbar{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.endIcons{
+display: flex;
+padding-right: 10px;
+}
+
+.menuicon {
+    color: #5F6368;
+}
+
+mat-sidenav:not(.mat-drawer-opened) {
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    width: 45px !important;
+    overflow: hidden!important;
+}
+   
+mat-sidenav {
+    width: 250px;
+    border-right: 0;
+}
+
+.main
+{
+    min-height: 600px;
+    background-color: white;
+}
+mat-list-item:hover
+{
+    background-color: #FEEFC3 !important;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
