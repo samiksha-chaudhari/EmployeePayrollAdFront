@@ -24,13 +24,24 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { RegiterComponent } from './Components/login/regiter/regiter.component';
 import { UserloginComponent } from './Components/userlogin/userlogin.component';
+import { EmployeeDetailComponent } from './Components/employee-detail/employee-detail.component';
+import {MatTableModule} from '@angular/material/table';
+import { AddressComponent } from './Components/address/address.component';
+import { SalaryComponent } from './Components/salary/salary.component';
+import { AttendanceComponent } from './Components/attendance/attendance.component';
+import { PayoutComponent } from './Components/payout/payout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     RegiterComponent,
-    UserloginComponent
+    UserloginComponent,
+    EmployeeDetailComponent,
+    AddressComponent,
+    SalaryComponent,
+    AttendanceComponent,
+    PayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,8 @@ import { UserloginComponent } from './Components/userlogin/userlogin.component';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

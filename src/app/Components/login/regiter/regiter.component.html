@@ -18,7 +18,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div>
+                        <div style="margin-left: 330px; margin-top: -80px;">
                             <span>EmailId</span>
                             <div>
                                 <mat-form-field width="100" appearance="outline">
@@ -27,7 +27,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div>
+                        <div style="margin-left: 330px;">
                             <span>Password</span>
                             <div>
                                 <mat-form-field appearance="outline">
@@ -37,7 +37,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div>
+                        <div style="margin-top: -80px;">
                             <span>Mobile Number</span>
                             <div>
                                 <mat-form-field appearance="outline">
@@ -46,7 +46,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div>
+                        <div style="margin-left: 330px;">
                             <span>Profile image</span>
                             <div>
                                 <mat-radio-button value="1"><img src="../../../assets/P1.png"></mat-radio-button>
@@ -54,18 +54,20 @@
                                 <mat-radio-button value="3"><img src="../../../assets/P3.png"></mat-radio-button>
                                 <mat-radio-button value="4"><img src="../../../assets/P4.png"></mat-radio-button>
                             </div>
+                        </div>
+
+                        <div style="margin-top: -80px;">
+                            <span>Gender</span>
                             <div>
-                                <span>Gender</span>
-                                <div>
-                                    <mat-form-field appearance="fill">
-                                        <mat-select disableRipple>
-                                            <mat-option value="1">Male</mat-option>
-                                            <mat-option value="2">Female</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                                <mat-form-field appearance="fill">
+                                    <mat-select disableRipple>
+                                        <mat-option value="1">Male</mat-option>
+                                        <mat-option value="2">Female</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
                             </div>
                         </div>
+
                         <div>
                             <span>Department</span>
                             <div>
@@ -79,7 +81,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div>
+                        <div style="margin-left: 330px;margin-top: -87px;">
                             <span>Start Date</span>
                             <div>
                                 <mat-form-field style="width: 280px;" appearance="fill">
@@ -95,14 +97,18 @@
                         <div>
                             <span>Note</span>
                             <div>
-                                <mat-form-field appearance="outline">
-                                    <input style="height: 50px;" matInput formControlName="note">
+                                <mat-form-field style="width: 610px;" appearance="outline">
+                                    <input style="height: 40px;" matInput formControlName="note">
                                 </mat-form-field>
                             </div>
                         </div>
                     </form>
-                    <button (click)="onSignup()" class="loginbutton" style="color: white;">Signup</button>
+                    <button (click)="onSignup()" class="loginbutton" style=" width:610px; color: white;">Register</button>
                 </div>
+                <div style="text-align: center;margin-top: 20px;"> Allready have account? 
+                    <button (click)="onLogin()" style="background-color: white; border:none; color:  #0dbe75;">Login</button>
+                </div>
+                
             </mat-card>
         </div>
     </div>

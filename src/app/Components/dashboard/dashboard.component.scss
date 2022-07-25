@@ -3,6 +3,10 @@ mat-toolbar{
     display: flex;
     justify-content: space-between; 
 }
+.menubutton{
+    background-color: white;
+    outline: none !important;
+}
 
 .menu{
     display: flex;

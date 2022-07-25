@@ -12,7 +12,7 @@ export class UserloginComponent implements OnInit {
   submitted = false;
   hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private route: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -20,6 +20,11 @@ export class UserloginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-  onLogin(){}
+  onLogin(){
+    this.route.navigateByUrl("/dashboard")
+  }
+  onRegister(){
+    this.route.navigateByUrl("/register")
+  }
 
 }

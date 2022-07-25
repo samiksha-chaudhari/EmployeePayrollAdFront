@@ -13,7 +13,7 @@ export class RegiterComponent implements OnInit {
   submitted = false;
   hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private route: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -31,8 +31,12 @@ export class RegiterComponent implements OnInit {
     });
   }
 
-  onLogin(){}
+  onLogin(){
+    this.route.navigateByUrl("/login")
+  }
 
-  onSignup(){}
+  onSignup(){
+    this.route.navigateByUrl("/login")
+  }
 
 }
