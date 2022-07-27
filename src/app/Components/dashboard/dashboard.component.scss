@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
-mat-toolbar{
-    display: flex;
+mat-toolbar{   
     justify-content: space-between; 
 }
 .menubutton{
     background-color: white;
-    outline: none !important;
+    outline: none;
 }
 
 .menu{
@@ -17,21 +16,10 @@ mat-toolbar{
 display: flex;
 padding-right: 10px;
 }
-
-.menuicon {
-    color: #5F6368;
-}
-
-mat-sidenav:not(.mat-drawer-opened) {
-    transform: translate3d(0, 0, 0) !important;
-    visibility: visible !important;
-    width: 45px !important;
-    overflow: hidden!important;
-}
    
 mat-sidenav {
-    width: 250px;
-    border-right: 0;
+    width: 220px;
+    background-color: rgb(212, 250, 231);
 }
 
 .main
@@ -41,7 +29,15 @@ mat-sidenav {
 }
 mat-list-item:hover
 {
-    background-color: #FEEFC3 !important;
-    border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
+    background-color: #1e9151 !important;
+    border-radius: 50px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 16px;
+
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  value = '';
-  searchword: any;
+export class DashboardComponent implements OnInit { 
 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
   EmpDetail() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('dashboard/employees')
   };
 
   Address() {

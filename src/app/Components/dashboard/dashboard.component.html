@@ -1,50 +1,49 @@
-<mat-toolbar style="background-color: white;border-bottom: 1px solid #DADCE0;">
-    <div class="menu">
-        <button >
-            <mat-icon (click)="sidenav.toggle()" class="menubutton">reorder</mat-icon>
-        </button>
-        <img src="../../../assets/logo.png" class="image">
-        <mat-card-title style="margin-left: 5px; padding-top:14px;">
-            <span style="color: #1e9151;font-weight:normal;">Employee Payroll</span>
-        </mat-card-title>
+<mat-toolbar style="background-color: rgb(212, 250, 231);border-bottom: 1px solid #DADCE0;">
+    <div class="menu">        
+        <mat-list-item (click)="sidenav.toggle();">
+            <mat-icon mat-list-icon>menu</mat-icon>
+        </mat-list-item>
+        <div style="margin-left: 450px;">
+            <img src="../../../assets/logo.png" class="image">
+            <mat-card-title >
+                <span style="color: #1e9151;font-size: 30px;">Employee Payroll</span>
+            </mat-card-title>
+        </div>
     </div>
-    
-    <div class="endIcons">
-        <button mat-icon-button >
-            <mat-icon>supervised_user_circle</mat-icon>
-            <mat-menu  class="moreOption">
-                <button mat-menu-item (click)="logout()">LogOut</button>
-            </mat-menu>
-        </button>
+
+    <div class="endIcons">        
+        <mat-list-item (click)="logout();">
+            <mat-icon mat-list-icon>supervised_user_circle</mat-icon>
+        </mat-list-item>
     </div>
 </mat-toolbar>
 
 <mat-sidenav-container class="main">
-    <mat-sidenav #sidenav mode="side">
+    <mat-sidenav #sidenav mode="side" opened>
         <mat-nav-list>
             <mat-list-item (click)="EmpDetail();">
-                <mat-icon mat-list-icon >face</mat-icon>
-                <h4 mat-line >Employee Details</h4>
+                <mat-icon mat-list-icon>face</mat-icon>
+                <h4 mat-line>Employee Details</h4>
             </mat-list-item>
-            <mat-list-item >
-                <mat-icon mat-list-icon (click)="Address()" >home</mat-icon>
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="Address()">home</mat-icon>
                 <h4 mat-line>Employee Address</h4>
             </mat-list-item>
-            <mat-list-item >
+            <mat-list-item>
                 <mat-icon mat-list-icon (click)="Salary()">attach_money</mat-icon>
                 <h4 mat-line>Salary Details</h4>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon (click)="Attendance()" >check</mat-icon>
+                <mat-icon mat-list-icon (click)="Attendance()">check</mat-icon>
                 <h4 mat-line>Attendance Details</h4>
-            </mat-list-item>            
-            <mat-list-item >
-                <mat-icon mat-list-icon (click)="Payout()" >payment</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="Payout()">payment</mat-icon>
                 <h4 mat-line>Payout Details</h4>
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>  
-    </mat-sidenav-content> 
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

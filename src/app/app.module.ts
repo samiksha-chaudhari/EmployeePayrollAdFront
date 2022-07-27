@@ -30,6 +30,12 @@ import { AddressComponent } from './Components/address/address.component';
 import { SalaryComponent } from './Components/salary/salary.component';
 import { AttendanceComponent } from './Components/attendance/attendance.component';
 import { PayoutComponent } from './Components/payout/payout.component';
+import { AuthguardServiceService } from './Services/AuthguardService/authguard-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { EditEmployeeComponent } from './Components/edit-employee/edit-employee.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +47,8 @@ import { PayoutComponent } from './Components/payout/payout.component';
     AddressComponent,
     SalaryComponent,
     AttendanceComponent,
-    PayoutComponent
+    PayoutComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +72,14 @@ import { PayoutComponent } from './Components/payout/payout.component';
     MatListModule,
     MatToolbarModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    MatDialogModule,
+    MatPaginatorModule
   ],
-  providers: [],
+  providers: [ 
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
