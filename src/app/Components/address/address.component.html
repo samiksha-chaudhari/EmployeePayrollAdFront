@@ -1,0 +1,40 @@
+<div>
+    <div>
+      <h2 style="color: #1e9151;text-align: center;">Employee Address Details</h2>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+      style="margin-top: 30px; margin-left:30px; width: 28cm;">
+  
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef> User ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef> State </th>
+        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-icon mat-raised-button (click)="openDialog(row)" color="primary" mat-list-icon> mode_edit</mat-icon>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="5" [pageSize]="5" [pageSizeOptions]="[1, 2, 3,4]" aria-label="Select page">
+    </mat-paginator>
+  </div>

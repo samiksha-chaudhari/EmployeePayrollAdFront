@@ -35,6 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditEmployeeComponent } from './Components/edit-employee/edit-employee.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { EditAddressComponent } from './Components/edit-address/edit-address.component';
+import { EditSalaryComponent } from './Components/edit-salary/edit-salary.component';
+import { EditAttendanceComponent } from './Components/edit-attendance/edit-attendance.component';
+import { EditPayoutComponent } from './Components/edit-payout/edit-payout.component';
 
 
 @NgModule({
@@ -48,7 +52,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SalaryComponent,
     AttendanceComponent,
     PayoutComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    EditAddressComponent,
+    EditSalaryComponent,
+    EditAttendanceComponent,
+    EditPayoutComponent
   ],
   imports: [
     BrowserModule,

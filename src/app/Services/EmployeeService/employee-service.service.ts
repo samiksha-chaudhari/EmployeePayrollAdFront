@@ -64,6 +64,14 @@ export class EmployeeServiceService {
       }
       return this.httpService.putService('/UpdateEmployeeDetails',data,  true, header)
   }
-
+  getallEmpAttend() {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpService.getService('/GetAllEmployeeAttend', false, headers)
+  }
 
 }

@@ -1,0 +1,44 @@
+<div mat-dialog-content>
+    <form [formGroup]="editForm" fxLayout="column">
+        <div>
+            <h3 mat-dialog-title style="text-align: center;"> Employee Payout Details</h3>
+        </div>
+        <div>
+            <span>Salary ID</span>
+            <div>
+                <mat-form-field style="width: 100;" appearance="outline">
+                    <input matInput formControlName="salaryId">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>CTC Amount</span>
+            <div>
+                <mat-form-field width="100" appearance="outline">
+                    <input matInput formControlName="ctc">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>PF Amount</span>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="pf">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>TAX Amount</span>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="tax">
+                </mat-form-field>
+            </div>
+        </div>
+       
+        <button (click)="onSubmit()" class="loginbutton" style=" width:100px; color: white;">{{actionBtn}}</button>
+        <button (click)="OnClose()" class="loginbutton"
+            style="margin-left: 180px;margin-top: -38px; background-color: red; width:100px; color: white;">Close</button>
+
+    </form>
+</div>

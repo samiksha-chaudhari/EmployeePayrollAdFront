@@ -1,0 +1,15 @@
+::ng-deep .mat-dialog-content {
+   overflow-y: hidden !important;
+}  
+ .loginbutton {
+    width: 270px;
+    height: 37px;
+    background: #24ac77 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    border: none;   
+ }
+ 
+ ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important; width: 252px;}
+ 
+ 

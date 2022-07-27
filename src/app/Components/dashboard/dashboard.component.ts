@@ -17,19 +17,19 @@ export class DashboardComponent implements OnInit {
   };
 
   Address() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/dashboard/address');
   };
 
   Salary() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/dashboard/salary');
   };
   
   Attendance() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/dashboard/attend');
   };
   
   Payout() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/dashboard/payout');
   };
 
   logout() {

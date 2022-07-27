@@ -1,0 +1,40 @@
+<div>
+    <div>
+      <h2 style="color: #1e9151;text-align: center;">Employee Attendance Details</h2>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+      style="margin-top: 30px; margin-left:30px; width: 28cm;">
+  
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef> User ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="presentDay">
+        <th mat-header-cell *matHeaderCellDef> Present Days </th>
+        <td mat-cell *matCellDef="let element"> {{element.presentDay}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="absentDay">
+        <th mat-header-cell *matHeaderCellDef> Absent Days </th>
+        <td mat-cell *matCellDef="let element"> {{element.absentDay}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="dailySalary">
+        <th mat-header-cell *matHeaderCellDef> Daily Salary </th>
+        <td mat-cell *matCellDef="let element"> {{element.dailySalary}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-icon mat-raised-button (click)="openDialog(row)" color="primary" mat-list-icon> mode_edit</mat-icon>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="5" [pageSize]="5" [pageSizeOptions]="[1, 2, 3,4]" aria-label="Select page">
+    </mat-paginator>
+  </div>

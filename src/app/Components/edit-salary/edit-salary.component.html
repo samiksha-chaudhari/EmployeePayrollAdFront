@@ -1,0 +1,45 @@
+<div mat-dialog-content>
+    <form [formGroup]="editForm" fxLayout="column">
+        <div>
+            <h3 mat-dialog-title style="text-align: center;"> Employee Salary Details</h3>
+        </div>
+        <div>
+            <span>User ID</span>
+            <div>
+                <mat-form-field style="width: 100;" appearance="outline">
+                    <input matInput formControlName="employeeId">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>Salary Date</span>
+            <div>
+                <mat-form-field width="100" appearance="outline">
+                    <input type="date" matInput formControlName="salaryDate">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>Amount</span>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="amount">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <span>Pay Slip Date</span>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input type="date" matInput formControlName="paySlip">
+
+                </mat-form-field>
+            </div>
+        </div>
+       
+        <button (click)="onSubmit()" class="loginbutton" style=" width:100px; color: white;">{{actionBtn}}</button>
+        <button (click)="OnClose()" class="loginbutton"
+            style="margin-left: 180px;margin-top: -38px; background-color: red; width:100px; color: white;">Close</button>
+
+    </form>
+</div>

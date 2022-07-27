@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { EmployeeServiceService } from 'src/app/Services/EmployeeService/employee-service.service';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 export interface EmployeeTable {
@@ -51,7 +49,7 @@ export class EmployeeDetailComponent implements OnInit {
 
   openDialog(row : any) {
     this.dialog.open(EditEmployeeComponent, {           
-      width:'50%',
+      width:'51%',
       height:'500px',
       data:row
     }).afterClosed().subscribe(val=>{

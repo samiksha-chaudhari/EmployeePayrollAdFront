@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { EmployeeServiceService } from 'src/app/Services/EmployeeService/employee-service.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class EditEmployeeComponent implements OnInit {
   actionBtn : string ='Save'
 
   constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) public editData : any, private empService : EmployeeServiceService,
+  private router :Router,
   private dialogRef : MatDialogRef<EditEmployeeComponent>) { }
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class EditEmployeeComponent implements OnInit {
     this.empService.update(this.editForm.value).subscribe((result: any) => {
       console.log("updated employee details", result);      
       this.dialogRef.close(result);
+      this.router.navigateByUrl('dashboard/employees')
     })
   }
 
