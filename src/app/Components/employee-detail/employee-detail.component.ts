@@ -35,8 +35,7 @@ export class EmployeeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEmp();
   }
-  getAllEmp() {
-   
+  getAllEmp() {   
     this.EmpService.getallEmp().subscribe((response: any) => {
       console.log(response);
       this.EmpList = response.data;
@@ -52,10 +51,15 @@ export class EmployeeDetailComponent implements OnInit {
 
   openDialog(row : any) {
     this.dialog.open(EditEmployeeComponent, {           
-      width:'54%',
+      width:'50%',
       height:'500px',
       data:row
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val=='save'){
+        console.log("EMP UPDATED************")
+        this.getAllEmp();
+      }
+    })
   }
   
 

@@ -5,14 +5,17 @@
     <div fxLayout="column" fxLayoutAlign="space-evenly start" >
         <form [formGroup]="editForm" fxLayout="column">
             <div>
+                <input [hidden]="!isInputShown" formControlName="employeeId" >
+            </div>
+            <div>
                 <span>User Name</span>
                 <div>
                     <mat-form-field style="width: 610px;" appearance="outline">
-                        <input matInput formControlName="fullName">
+                        <input matInput formControlName="userName">
                     </mat-form-field>
                 </div>
             </div>
-            <div style="margin-left: 330px; ">
+            <div style="margin-left: 330px; margin-top: -20px; ">
                 <span>EmailId</span>
                 <div>
                     <mat-form-field width="100" appearance="outline">
@@ -25,15 +28,15 @@
                 <span>Mobile Number</span>
                 <div>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="mobileNumber">
+                        <input matInput formControlName="mobileNo">
 
                     </mat-form-field>
                 </div>
             </div>
-            <div style="margin-left: 330px;">
+            <div style="margin-left: 330px; margin-top: -10px;">
                 <span>Profile image</span>
                 <div>
-                    <mat-radio-group formControlName="image">
+                    <mat-radio-group formControlName="profileImage">
                         <mat-radio-button value="1"><img src="../../../assets/P1.png">
                         </mat-radio-button>
                         <mat-radio-button value="2"><img src="../../../assets/P2.png">
@@ -46,7 +49,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: -80px;">
+            <div style="margin-top: -85px;">
                 <span>Gender</span>
                 <div>
                     <mat-form-field appearance="fill">
@@ -58,7 +61,7 @@
                 </div>
             </div>
 
-            <div>
+            <div style="margin-top: -10px;">
                 <span>Department</span>
                 <div>
                     <mat-form-field appearance="fill">
@@ -76,7 +79,7 @@
                 <div>
                     <mat-form-field style="width: 280px;" appearance="fill">
                         <mat-label>Choose a date</mat-label>
-                        <input matInput formControlName="date" [matDatepicker]="picker">
+                        <input matInput formControlName="startDate" [matDatepicker]="picker">
                         <mat-datepicker-toggle matSuffix [for]="picker">
                             <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                         </mat-datepicker-toggle>
@@ -84,7 +87,7 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
+            <div style="margin-top: -10px;">
                 <span>Note</span>
                 <div>
                     <mat-form-field style="width: 610px;" appearance="outline">
@@ -93,7 +96,7 @@
                 </div>
             </div>
         </form>
-        <button (click)="onSubmit()" class="loginbutton" style=" width:250px; color: white;">Submit</button>
+        <button (click)="onSubmit()" class="loginbutton" style=" width:250px; color: white;">{{actionBtn}}</button>
         <button (click)="onSubmit()" class="loginbutton" style="margin-left: 335px;margin-top: -38px; background-color: red; width:250; color: white;">Close</button>
 
     </div>
