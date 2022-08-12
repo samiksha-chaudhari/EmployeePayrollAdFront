@@ -30,7 +30,7 @@ export class EmployeeServiceService {
         //Authorization: this.token
       })
     }   
-    return this.httpService.postService('/login', reqData, true, headers)
+    return this.httpService.postService('/Employeelogin', reqData, true, headers)
   }
 
   // GetAllEmployess()(reqPayload: any) {

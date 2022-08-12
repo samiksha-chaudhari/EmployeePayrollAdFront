@@ -22,4 +22,25 @@ export class SalaryServiceService {
     return this.httpService.getService('/GetAllSalary', false, headers)
   }
 
+  addSalary(reqData: any) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        //Authorization: this.token
+      })
+    }   
+    return this.httpService.postService('/AddSalary', reqData, true, headers)
+  }
+
+  update(data :any){
+    console.log("update employee service");
+    let header = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })      
+      }
+      return this.httpService.putService('/UpdateEmployeeSalary',data,  true, header)
+  }
+
 }

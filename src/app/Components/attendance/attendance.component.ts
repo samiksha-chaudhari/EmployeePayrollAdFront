@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeServiceService } from 'src/app/Services/EmployeeService/employee-service.service';
+import { EditAddressComponent } from '../edit-address/edit-address.component';
 import { EditAttendanceComponent } from '../edit-attendance/edit-attendance.component';
 export interface AddressTable {
   employeeId: number;
@@ -42,6 +43,19 @@ export class AttendanceComponent implements OnInit {
     },error=>{console.log(error);
     })
   }
+  onAdd(){
+    this.dialog.open(EditAttendanceComponent, {           
+      width:'26%',
+      height:'450px'
+    }).afterClosed().subscribe(val=>{
+      if(val=='save'){
+        console.log(val);        
+        this.getAttend();
+        console.log("ADDRESS UPDATED************")
+      }
+    })
+  }
+
 
   openDialog(row : any) {
     this.dialog.open(EditAttendanceComponent, {           

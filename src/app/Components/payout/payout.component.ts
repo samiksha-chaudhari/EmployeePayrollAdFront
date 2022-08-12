@@ -42,6 +42,19 @@ export class PayoutComponent implements OnInit {
     },error=>{console.log(error);
     })
   }
+  onAdd(){
+    this.dialog.open(EditPayoutComponent, {           
+      width:'26%',
+      height:'450px'
+    }).afterClosed().subscribe(val=>{
+      if(val=='save'){
+        console.log(val);        
+        this.getPay();
+        console.log("ADDRESS UPDATED************")
+      }
+    })
+  }
+
 
   openDialog(row : any) {
     this.dialog.open(EditPayoutComponent, {           

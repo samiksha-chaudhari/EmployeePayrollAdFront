@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { SalaryServiceService } from 'src/app/Services/SalaryService/salary-service.service';
 import { EditSalaryComponent } from '../edit-salary/edit-salary.component';
 export interface AddressTable {
@@ -22,6 +23,11 @@ export class SalaryComponent implements OnInit {
   SalaryCount: any  
   totallength:any
   data :any
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   constructor(private salary :SalaryServiceService,  private dialog: MatDialog) { }
 
@@ -41,6 +47,19 @@ export class SalaryComponent implements OnInit {
     },error=>{console.log(error);
     })
   }
+  onAdd(){
+    this.dialog.open(EditSalaryComponent, {           
+      width:'26%',
+      height:'450px'
+    }).afterClosed().subscribe(val=>{
+      if(val=='save'){
+        console.log(val);        
+        this.getSalary();
+        console.log("ADDRESS UPDATED************")
+      }
+    })
+  }
+
 
   openDialog(row : any) {
     this.dialog.open(EditSalaryComponent, {           

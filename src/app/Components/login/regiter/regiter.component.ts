@@ -9,8 +9,7 @@ import { EmployeeServiceService } from 'src/app/Services/EmployeeService/employe
   templateUrl: './regiter.component.html',
   styleUrls: ['./regiter.component.scss']
 })
-export class RegiterComponent implements OnInit {
-  loginForm!: FormGroup;
+export class RegiterComponent implements OnInit {  
   signupForm!: FormGroup;
   submitted = false;
   hide: boolean = true;
@@ -51,8 +50,7 @@ export class RegiterComponent implements OnInit {
       note: this.signupForm.value.note
     }
     console.log(this.signupForm.value);
-    if (this.signupForm.valid) {
-      
+    if (this.signupForm.valid) {      
         console.log("user");
         console.log("valid");
         this.userservice.registerUserService(reqData).subscribe((response: any) => {

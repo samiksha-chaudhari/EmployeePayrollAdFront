@@ -20,6 +20,7 @@ padding-right: 10px;
 mat-sidenav {
     width: 220px;
     background-color: rgb(212, 250, 231);
+    border-right: 1px solid rgb(212, 250, 231);
 }
 
 .main
@@ -41,3 +42,4 @@ mat-list-item:hover
     margin: 16px;
 
 }
+

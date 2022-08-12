@@ -47,6 +47,19 @@ export class EmployeeDetailComponent implements OnInit {
     })
   }
 
+  onAdd(){
+    this.dialog.open(EditEmployeeComponent, {           
+      width:'51%',
+      height:'500px'
+    }).afterClosed().subscribe(val=>{
+      if(val=='save'){
+        console.log(val);        
+        this.getAllEmp();
+        console.log("EMP UPDATED************")
+      }
+    })
+  }
+
   openDialog(row : any) {
     this.dialog.open(EditEmployeeComponent, {           
       width:'51%',
@@ -54,8 +67,9 @@ export class EmployeeDetailComponent implements OnInit {
       data:row
     }).afterClosed().subscribe(val=>{
       if(val=='save'){
-        console.log("EMP UPDATED************")
+        console.log(val);        
         this.getAllEmp();
+        console.log("EMP UPDATED************")
       }
     })
   }

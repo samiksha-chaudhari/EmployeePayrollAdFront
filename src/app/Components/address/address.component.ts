@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { AddressServiceService } from 'src/app/Services/AddressService/address-service.service';
 import { EditAddressComponent } from '../edit-address/edit-address.component';
 export interface AddressTable {
@@ -18,7 +19,7 @@ export interface AddressTable {
 export class AddressComponent implements OnInit {
   AddressList: any = [];
   displayedColumns: string[] = ['employeeId','address','city','state','action'];
-  dataSource = this.AddressList;  
+  dataSource = new MatTableDataSource(this.AddressList);;  
   AddressCount: any  
   totallength:any
   data :any
@@ -28,6 +29,12 @@ export class AddressComponent implements OnInit {
   ngOnInit(): void {
     this.getAddress();
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   getAddress() {   
     this.address.getallAddress().subscribe((response: any) => {
       console.log(response);
@@ -39,6 +46,18 @@ export class AddressComponent implements OnInit {
       console.log(this.AddressCount);
       
     },error=>{console.log(error);
+    })
+  }
+  onAdd(){
+    this.dialog.open(EditAddressComponent, {           
+      width:'26%',
+      height:'450px'
+    }).afterClosed().subscribe(val=>{
+      if(val=='add'){
+        console.log(val);        
+        this.getAddress();
+        console.log("ADDRESS UPDATED************")
+      }
     })
   }
 
